@@ -1,6 +1,0 @@
-For generating the graphs --> chach the data the you serched for and generate graph 
-
-FUNCTIONALITIES 
-- search by disease filter or by gene name 
-- for disease we can see the plots - but IDK what are we looking at ? I have only genes names now 
-- 
