@@ -1,0 +1,122 @@
+<!--The full outline of the web page will go here, rigid format-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ortholog Match</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Connect your CSS file -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- CSS-only toggle control (no JS) -->
+  <input id="swapToggle" class="swap-toggle" type="checkbox" aria-hidden="true" />
+
+  <div class="app">
+    <!-- Top bar: title + swap control -->
+    <header class="top-bar">
+      <h1 class="app-title">Ortholog Match</h1>
+    </header>
+
+    <!-- Split layout: left = search + results, gutter = draggable, right = visualisation -->
+    <main class="split-layout" id="split">
+      <div class="left-panel" id="leftPanel">
+        <!-- Search bar -->
+        <section class="search-section">
+          <input
+            type="search"
+            class="search-input"
+            placeholder="Search for genes..."
+            aria-label="Search for genes"
+          />
+          <div class="mode-toggle" aria-hidden="false">
+            <button class="mode-button mode-button--active" type="button">
+              Gene Mode
+            </button>
+            <button class="mode-button" type="button">
+              Disease Mode
+            </button>
+          </div>
+        </section>
+
+        <!-- Left: results table -->
+        <section class="results-panel">
+          <header class="panel-header">
+            <h2 class="panel-title">Results</h2>
+            <p class="panel-subtitle">Top matches for your search</p>
+          </header>
+
+          <div class="results-table-wrapper">
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th>Human Gene</th>
+                  <th>Human Ensembl</th>
+                  <th>Disease</th>
+                  <th>Rat Gene</th>
+                  <th>Rat Ensembl</th>
+                </tr>
+              </thead>
+              <tbody id="resultsBody">
+                <tr class="loading-row"><td colspan="7">Loading results…</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="results-footer">
+            <button class="show-more-button" type="button">
+              Show More
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <!-- draggable gutter -->
+      <div class="gutter" id="gutter" aria-hidden="true"></div>
+
+      <!-- Right: analysis sidebar -->
+      <div class="right-panel" id="rightPanel">
+        <aside class="analysis-panel" aria-label="Analysis">
+          <!-- Heatmap card -->
+          <section class="card heatmap-card">
+            <header class="card-header">
+              <h2 class="card-title">Visualization</h2>
+            </header>
+            <div class="visualization-placeholder">
+              Visualization
+            </div>
+          </section>
+
+          <!-- Metrics card -->
+          <section class="card metrics-card">
+            <header class="card-header">
+              <h2 class="card-title">Summary</h2>
+            </header>
+
+            <dl class="metrics-list">
+              <div class="metric-row">
+                <dt>Total Genes</dt>
+                <dd>1,247</dd>
+              </div>
+              <div class="metric-row">
+                <dt>Avg Expression</dt>
+                <dd>3.42</dd>
+              </div>
+              <div class="metric-row">
+                <dt>P-Value</dt>
+                <dd>0.0012</dd>
+              </div>
+              <div class="metric-row metric-row--highlight">
+                <dt>Confidence</dt>
+                <dd>94%</dd>
+              </div>
+            </dl>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script src="split.js"></script>
+</body>
+</html>
