@@ -1,0 +1,109 @@
+<!--The full outline of the web page will go here, rigid format-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ortholog Match</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1 class="app-title">Ortholog Match</h1>
+    </header>
+
+    <!-- Split layout: left = search + results, gutter = draggable, right = visualisation -->
+    <main class="split-layout" id="split">
+      <div class="left-panel" id="leftPanel">
+        <!-- Search bar -->
+        <section class="search-section">
+          <input
+            type="search"
+            class="search-input"
+            id="searchInput"
+            placeholder="Search for ..."
+          />
+          <div class="mode-toggle">
+            <button id="geneModeBtn" class="mode-button mode-button--active" type="button">
+              Gene Mode
+            </button>
+            <button id="diseaseModeBtn" class="mode-button" type="button">
+              Disease Mode
+            </button>
+          </div>
+        </section>
+
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Human Gene</th>
+              <th>Human Ensembl</th>
+              <th>Rat Gene</th>
+              <th>Rat Ensembl</th>
+              <th>Disease</th>
+            </tr>
+          </thead>
+          <tbody id="resultsBody">
+            <!-- JS will fill this -->
+          </tbody>
+        </table>
+
+        <div class="results-footer">
+          <button class="show-more-button" type="button">
+            Show More
+          </button>
+        </div>
+      </div>
+
+      <!-- draggable gutter -->
+      <div class="gutter" id="gutter" aria-hidden="true"></div>
+
+      <!-- Right: analysis sidebar -->
+      <div class="right-panel" id="rightPanel">
+        <aside class="analysis-panel" aria-label="Analysis">
+          <!-- Heatmap card -->
+          <section class="card heatmap-card">
+            <header class="card-header">
+              <h2 class="card-title">Visualization</h2>
+            </header>
+            <div class="visualization-placeholder">
+              Visualization
+            </div>
+          </section>
+
+          <!-- Metrics card -->
+          <section class="card metrics-card">
+            <header class="card-header">
+              <h2 class="card-title">Summary</h2>
+            </header>
+
+            <dl class="metrics-list">
+              <div class="metric-row">
+                <dt>Total Genes</dt>
+                <dd>1,247</dd>
+              </div>
+              <div class="metric-row">
+                <dt>Avg Expression</dt>
+                <dd>3.42</dd>
+              </div>
+              <div class="metric-row">
+                <dt>P-Value</dt>
+                <dd>0.0012</dd>
+              </div>
+              <div class="metric-row metric-row--highlight">
+                <dt>Confidence</dt>
+                <dd>94%</dd>
+              </div>
+            </dl>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script src="split.js"></script>
+  <script src="LeftPanel.js"></script>
+  <script src="RightPanel.js"></script>
+</body>
+</html>

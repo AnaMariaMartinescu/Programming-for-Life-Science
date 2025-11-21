@@ -1,0 +1,7 @@
+Instead of a searchbar maybe something else would be more helpful 
+You can have like some bottoms to choose functionalities 
+Idk, I can implemnt multiple queries and have multiple visualisations 
+But the thing is I worked 2 weeks for the dammned seach bar I wanna make it work 
+Moreover , I need to generate a graph that acutally make sense 
+At the moment I feel like I don;t have control over what goes inside that plot 
+But at least I have a demonstration of how it could potentially work 

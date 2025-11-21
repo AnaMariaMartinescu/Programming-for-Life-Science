@@ -1,0 +1,51 @@
+/* Basic page look */
+body {
+  background: #0d1117;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  padding: 20px;
+}
+
+/* Visualisation Card*/
+.visualization-card {
+  background: #161b22;
+  padding: 16px;
+
+/*Buttons*/
+.viz-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.viz-toggle-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;      /* round buttons */
+  background: #e0e8ff;      /* light blue */
+  color: #003366;           /* dark blue text */
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.15s ease;
+}
+
+.viz-toggle-btn:hover {
+  background: #c7d6ff;
+}
+
+.viz-toggle-btn--active {
+  background: #4c72b0;      /* your main blue */
+  color: white;
+}
+
+/*Buttons*/
+
+
+  #vis-area {
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+
+}
+
+}
