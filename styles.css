@@ -1,0 +1,370 @@
+/* -------------------- */
+/*  GLOBAL PAGE STYLING */
+/* -------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Wrapper */
+.page-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+  /* ------------------------ */
+  /* NAVIGATION TOP BAR      */
+  /* ------------------------ */
+
+.nav {
+  width: 100%;
+  padding: 24px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+}
+
+/*Color of the logo*/
+.logo {
+  color: #317be9;
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-right {
+  display: flex;
+  gap: 32px;
+}
+
+
+
+/* NAVIGATION MENU BAR */
+.nav-link { color: #ffffff; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-link .nav-icon { display: inline-flex; width: 20px; height: 20px; line-height: 0; }
+.nav-link .nav-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;                 /* ensure shapes are not filled */
+  stroke: currentColor;       /* use currentColor for outline */
+  stroke-width: 1.2;          /* reduce thickness; adjust between 1 and 1.5 */
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke; /* keeps stroke consistent when scaled */
+  display: block;
+  opacity: 0.9;
+  transition: opacity .18s, transform .18s;
+}
+
+/*When hovering the mouse on the menu see color highlights*/
+.nav-link:hover, .nav-link:focus { color: #2b76df; }
+
+
+/* -------------------- */
+/*      HERO SECTION    */
+/* -------------------- */
+
+.hero {
+  /* center hero content in the page (vertically + horizontally) */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 50px;
+  text-align: center;
+
+
+/* leaves room for header + footer; adjust 160px if needed */
+  min-height: calc(100vh - 160px); 
+}
+
+.hero-bubbles {
+  /* cover the full hero area exactly */
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.hero-content {
+  max-width: 760px;
+  z-index: 10;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  color: #e2e2e2;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+/*Placeholder for the explore visualisations button styling*/
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: #3a8bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  transition: 0.2s ease;
+}
+
+/*When hover change the color background of the button: explore visualisations */
+.primary-button:hover {
+  background: #234fbe;
+}
+
+
+
+/* ------------------------------------------------------------- */
+/*                  BUBBLE ANIMATION CODE                 */
+/* ------------------------------------------------------------- */
+
+/* From Uiverse.io by dexter-st */
+.loader-wrapper {
+  position: relative;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  /* use the CSS variable when present so bubble-specific sizes take effect*/
+  width: var(--bubble-size, 180px);
+  height: var(--bubble-size, 280px);
+  background-color: transparent;
+}
+
+/*Loader settings */
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%; /*makes it square if you remove*/
+  background-color: transparent;
+  animation: loader-rotate 6s linear infinite; /*speed/duration of the bubble movement*/
+  z-index: 0;
+}
+
+/*Change color gradients of the moving bubbles*/
+
+@keyframes loader-rotate {
+  5% {
+    transform: rotate(90deg);
+    box-shadow:
+      0 10px 20px 0 #fff inset,
+      0 20px 30px 0 #16b9ff inset,
+      0 60px 60px 0 #1d00db inset;
+  }
+
+  60% {
+    transform: rotate(270deg);
+    box-shadow:
+      0 10px 20px 0 #fff inset,
+      0 20px 10px 0 #00c4ad inset,
+      0 40px 60px 0 #0060af inset;
+  }
+
+  100% {
+    transform: rotate(370deg);
+    box-shadow:
+      0 10px 30px 0 #01a2dc inset,
+      0 20px 30px 0 #4f49ff inset,
+      0 60px 60px 0 #3a008b inset;
+  }
+}
+
+
+/* ===================================================== */
+/*  BUBBLE SIZING */
+/* ===================================================== */
+
+/* Override Uiverse size so custom sizes work */
+.loader-wrapper.bubble {
+  width: var(--bubble-size) !important;
+  height: var(--bubble-size) !important;
+  position: absolute;
+  opacity: 0.6;
+  filter: blur(1px);
+  transform-origin: center;
+  z-index: 0;
+}
+
+
+/* ---------------------------- */
+/* INDIVIDUAL BUBBLE SIZES      */
+/* ---------------------------- */
+
+.bubble-center {
+    --bubble-size: 770px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bubble-left {
+  --bubble-size: 370px;
+  left: 20%;
+  top: 40%;
+  transform: translate(-30%, -70%);
+}
+
+.bubble-right {
+  --bubble-size: 530px;
+  right: 22%;
+  top: 82%;
+  transform: translate(50%, -80%);
+}
+
+/* ---------------------------- */
+/* VISUALISATION  PAGE   */
+/* ---------------------------- */
+.content {
+  max-width: 1200px;
+  margin: 26px auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/*Visualization panel*/
+.panel {
+  background: rgba(30, 30, 30, 0.588);
+  border-radius: 20px;  /*rounded corners*/
+  padding: 20px;
+  color: #ffffff;
+}
+
+.panel h2 {
+  margin: 6px 0 14px;
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Controls above the visualization */
+.viz-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.viz-toggle-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: #cfcfcf;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all .15s ease;
+  box-shadow: none;
+}
+
+
+
+.viz-toggle-btn--active {
+  background: #1976ff;
+  color: #ffffff;
+}
+
+/* Visualization container */
+/* .vis-wrapper {
+  background: rgba(0,0,0,0.35);
+  border-radius: 8px;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,0.02);
+} */
+
+.vis-area {
+  width: 100%;
+  height: 620px; /* adjust if you want taller/shorter */
+  border-radius: 6px;
+  background: rgba(0,0,0,0.5);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* keep Plotly chart full height of container */
+#vis-area > .js-plotly-plot,
+#vis-area > div[data-plotly],
+#vis-area .plotly {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/* placeholder shown while loading */
+.vis-placeholder {
+  color: rgba(255, 255, 255, 0.83);
+  font-size: 0.95rem;
+  text-align: center;
+  line-height: 1.3;
+  padding: 12px;
+  pointer-events: none;
+}
+
+
+
+/* keep the placeholder styling (already present) */
+#vis-area .vis-placeholder {
+  position: absolute;
+  z-index: 55;
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.45);
+  pointer-events: none;
+  top: 48%;
+  transform: translateY(-50%);
+}
+
+/* Ensure visualization area stacks multiple plots/containers vertically */
+#vis-area {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;            /* space between plotly-root and heatmap-top-diseases */
+  align-items: stretch;
+}
+
+/* Make sure each plot container uses its own height and full width */
+#plotly-root,
+#heatmap-top-diseases {
+  width: 100%;
+  box-sizing: border-box;
+  flex: none;           /* do not stretch; height comes from explicit style or Plotly sizing */
+}
+
+/* optional: make heatmap height match plot root or set explicit */
+#heatmap-top-diseases {
+  height: 560px;        /* adjust if you want larger/smaller */
+}
