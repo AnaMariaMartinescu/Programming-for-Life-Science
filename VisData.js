@@ -912,36 +912,71 @@ function renderBar(bindingsOrProcessed) {
     "house mouse": {
       img: "images/House Mouse.jpg",
       scientific: "Mus musculus",
-      text: "The house mouse is a small mammal of the order Rodentia; widely used as a model organism."
+      text: `The house mouse (Mus musculus) is a small rodent belonging to the family Muridae of the order Rodentia. Originally native to the grasslands and human settlements of Central Asia, it has spread worldwide alongside human populations and now inhabits a wide range of environments. Because of its long association with humans, it adapts readily to laboratory conditions and has become one of the most extensively studied mammals in biology.
+  
+  The house mouse is an essential and widely used vertebrate model organism in scientific research, particularly in genetics, immunology, neuroscience, and cancer biology. Its short generation time, high reproductive rate, and well-characterized genome make it highly suitable for controlled experimental studies. The species shares a substantial proportion of its genes with humans, enabling researchers to investigate gene function, model human diseases, and develop new therapeutic strategies. In addition, its use in pre-clinical drug development is well established, and numerous transgenic, knockout, and CRISPR-modified strains have been created to support studies in areas such as developmental disorders, immune system function, and tumor progression.
+  
+  In the wild, house mice are found in fields, buildings, farmlands, and urban areas, typically seeking habitats that offer shelter and accessible food sources. They reproduce throughout the year under favorable conditions, and their behavioural flexibility allows them to thrive in both natural landscapes and human-dominated environments.`
     },
+  
     "brown rat": {
       img: "images/Brown Rat.jpg",
       scientific: "Rattus norvegicus",
-      text: "The brown rat is commonly used in physiology and toxicology research."
+      text: `The brown rat (Rattus norvegicus) is a medium-sized rodent belonging to the family Muridae of the order Rodentia. Originally native to the grassy plains and riverbanks of northern China, it has spread globally through human activity and is now common in urban, agricultural, and coastal environments. Its adaptability, social behaviour, and close association with human settlements have contributed to its establishment as a key species in both ecological studies and laboratory research.
+  
+  The brown rat is an important and widely used vertebrate model organism in biomedical research, valued for its genetic and physiological similarities to humans, its relatively large body size, and its ease of breeding in controlled conditions. It has long been central to studies in cardiovascular disease, neuroscience, endocrinology, toxicology, and pharmacology, making it one of the foundational species for modern experimental medicine. Numerous inbred, outbred, and genetically modified strains exist, allowing researchers to obtain consistent, reproducible results and to investigate specific disease pathways, gene functions, and drug responses with high precision.
+  
+  In natural and human-dominated habitats, brown rats inhabit burrows, sewers, warehouses, fields, and riverbanks, typically favouring areas with reliable food sources and shelter. They form social groups, breed readily throughout the year when conditions permit, and display flexible foraging and nesting behaviours that enable them to thrive across a wide range of environments.`
     },
+  
     "Danio rerio": {
       img: "images/Danio rerio.jpg",
       scientific: "Danio rerio",
-      text: "Zebrafish are a popular developmental and genetic model organism."
+      text: `The zebrafish (Danio rerio) is a species of freshwater ray-finned fish belonging to the family Danionidae of the order Cypriniformes. Native to South Asia, it is a popular aquarium fish, frequently sold under the trade name zebra danio (and thus often called a tropical fish although it is both tropical and subtropical).
+
+The zebrafish is an important and widely used vertebrate model organism in scientific research, particularly developmental biology, but also gene function, oncology, teratology, and drug development, in particular pre-clinical development, due to its scalability from high numbers of offspring and ease of drug delivery through water into the gills. It is also notable for its regenerative abilities, and has been modified by researchers to produce many transgenic strains.
+
+Adults inhabit streams, canals, ditches, ponds and beels. Occur in slow-moving to stagnant standing water bodies, particularly rice-fields and  lower reaches of streams. They breed all year round.`
     },
+  
     "Drosophila melanogaster": {
       img: "images/Drosophila melanogaster.jpg",
       scientific: "Drosophila melanogaster",
-      text: "Fruit fly — classic genetic model organism."
+      text: `Drosophila melanogaster is a species of fly (an insect of the order Diptera) in the family Drosophilidae. The species is often referred to as the fruit fly or lesser fruit fly, or less commonly the "vinegar fly", "pomace fly", or "banana fly". In the wild, D. melanogaster are attracted to rotting fruit and fermenting beverages, and they are often found in orchards, kitchens, and pubs.
+  
+  Starting with Charles W. Woodworth's 1901 proposal of the use of this species as a model organism, D. melanogaster continues to be widely used for biological research in genetics, physiology, microbial pathogenesis, and life history evolution. In 1946, D. melanogaster was the first animal to be launched into space. As of 2017, six Nobel Prizes have been awarded to drosophilists for their work using the insect.
+  
+  Drosophila melanogaster is typically used in research owing to its rapid life cycle, relatively simple genetics with only four pairs of chromosomes, and large number of offspring per generation. It was originally an African species, with all non-African lineages having a common origin. Its geographic range includes all continents, including islands. D. melanogaster is a common pest in homes, restaurants, and other places where food is served.`
     },
+  
     "Caenorhabditis elegans": {
       img: "images/Caenorhabditis elegans.jpg",
       scientific: "Caenorhabditis elegans",
-      text: "Nematode used extensively in developmental biology and neurobiology."
+      text: `Caenorhabditis elegans is a species of free-living, transparent nematode (roundworm) belonging to the family Rhabditidae within the phylum Nematoda. Native to temperate regions worldwide, it naturally inhabits soil environments rich in decaying organic matter, where it feeds primarily on bacteria. Because of its simplicity and ease of laboratory culture, it is one of the most widely used invertebrate model organisms in biology.
+  
+  C. elegans is a cornerstone of modern scientific research, particularly in developmental biology, neurobiology, genetics, aging research, and cell biology. It was the first multicellular organism to have its genome fully sequenced, and its entire cell lineage—from fertilized egg to adult—has been mapped in detail. Its transparent body, short reproductive cycle, and well-defined nervous system make it ideal for studies of gene function, behavior, programmed cell death, and longevity. Numerous mutant and transgenic strains are available, enabling precise manipulation of biological pathways.
+  
+  In the wild, C. elegans is commonly found in compost, rotting fruit, and leaf litter. It thrives in moist, microbe-rich substrates. The species reproduces primarily through self-fertilizing hermaphrodites, though males occur at low frequency and enable cross-fertilization. Under environmental stress such as overcrowding or limited food, larvae can enter a long-lived, highly resistant dauer stage, allowing survival until conditions improve.`
     },
+  
     "Saccharomyces cerevisiae S288c": {
       img: "images/Saccharomyces cerevisiae S288c.jpg",
       scientific: "Saccharomyces cerevisiae",
-      text: "Baker's yeast — unicellular eukaryote used in many molecular studies."
+      text: `Saccharomyces cerevisiae (Baker’s Yeast)
+  
+  Saccharomyces cerevisiae is a species of unicellular fungus (yeast) belonging to the phylum Ascomycota within the kingdom Fungi. Believed to have originated from environments rich in simple sugars, such as tree bark and fruit surfaces, it has been domesticated globally and is widely used in baking, brewing, and winemaking. Because of this, it is often known by the common names baker’s yeast or brewer’s yeast.
+  
+  Saccharomyces cerevisiae is an important and extensively used model organism in biological research, particularly in molecular biology, genetics, cell biology, and biochemistry. Its relevance comes from its eukaryotic nature, rapid growth, ease of genetic manipulation, and well-annotated genome. Research using S. cerevisiae has contributed significantly to understanding cell cycle regulation, DNA repair, metabolism, aging, and protein secretion pathways. It is also widely used in biotechnology, including recombinant protein production and metabolic engineering.
+  
+  In natural environments, S. cerevisiae typically inhabits sugar-rich niches such as fruits, tree exudates, soil, and fermented plant material. It reproduces both asexually through budding and sexually via spore formation. Under favorable conditions, it grows rapidly, while nutrient limitations can induce meiosis and the formation of resistant spores.`
     },
+  
     // fallback placeholder
-    "": { img: "images/placeholder.png", text: "No description available." }
-  };
+    "": {
+      img: "images/placeholder.png",
+      text: "No description available."
+    }
+  };  
   
   const { x = [], y = [] } = processed;
   if (!x.length) {
