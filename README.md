@@ -33,3 +33,15 @@ Developer notes
 
 License
 This project is licensed under the MIT License — see [LICENSE](LICENSE).
+
+## License
+
+This repository contains only data derived from Wikidata.
+
+All content is licensed under the Creative Commons
+Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license.
+
+See the `DATA LICENSE` file for full terms.
+
+Wikidata License: https://creativecommons.org/licenses/by-sa/4.0/
+
