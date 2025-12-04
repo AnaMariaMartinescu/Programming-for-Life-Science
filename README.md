@@ -4,6 +4,19 @@
 ```
 bash git clone https://github.com/AnaMariaMartinescu/Programming-for-Life-Science.git
 ```
+## Recommended Local Preview
+
+For the best experience when running the project locally, we recommend using the **Live Preview** extension by Microsoft in VS Code.
+
+### How to use Live Preview
+
+1. Open the project folder in **VS Code**.
+2. Install the **Live Preview** extension (Microsoft).
+3. Right-click on `index.html`.
+4. Select **"Show Preview"** or **"Open with Live Preview"**.
+5. The visualizations will load inside a local browser window without CORS issues.
+
+This is the easiest and most reliable way to view `index.html` and `visualizations.html` when developing or exploring the project locally.
 
 # OrthologExplore
 
