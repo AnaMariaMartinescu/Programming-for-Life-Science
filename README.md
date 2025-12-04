@@ -31,17 +31,19 @@ Developer notes
 - To change the diseases or species used, edit the SPARQL strings in [`QUERIES`](VisData.js).
 - For local testing, a simple static server is recommended (e.g. `npx http-server` or `python -m http.server`) to avoid CORS/file URL issues.
 
-License
-This project is licensed under the MIT License — see [LICENSE](LICENSE).
 
-## License
+### Code License (MIT)
+All original source code in this repository (JavaScript, HTML, CSS, and logic files)
+is licensed under the MIT License.
 
-This repository contains only data derived from Wikidata.
+See the `LICENSE` file for details.
 
-All content is licensed under the Creative Commons
-Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license.
+### Data License (Wikidata – CC-BY-SA 4.0)
+All data and visualizations in this repository that are derived from Wikidata 
+are licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
 
-See the `DATA LICENSE` file for full terms.
+See the `DATA_LICENSE` file for full terms.
 
 Wikidata License: https://creativecommons.org/licenses/by-sa/4.0/
+
 
