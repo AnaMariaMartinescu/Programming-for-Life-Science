@@ -14,9 +14,9 @@ For the best experience when running the project locally, we recommend using the
 2. Install the **Live Preview** extension (Microsoft).
 3. Right-click on `index.html`.
 4. Select **"Show Preview"** or **"Open with Live Preview"**.
-5. The visualizations will load inside a local browser window without CORS issues.
+5. The visualizations will load inside a local browser window without issues.
 
-This is the easiest and most reliable way to view `index.html` and `visualizations.html` when developing or exploring the project locally.
+This is the easiest and most reliable way to view `index.html` developing or exploring the project locally.
 
 # OrthologExplore
 
