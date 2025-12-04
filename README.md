@@ -27,7 +27,7 @@ Quick start
 2. The visualizations are driven by the script [VisData.js](VisData.js) which queries Wikidata's SPARQL endpoint.
 
 Files
-- [index.html](index.html) — Landing page with hero + link to visualizations.
+- [index.html](index.html) — Landing page with hero (animation from the background) + link to visualizations.
 - [visualizations.html](visualizations.html) — Main visualization UI and controls.
 - [about.html](about.html) — About page.
 - [styles.css](styles.css) — Global styles.
