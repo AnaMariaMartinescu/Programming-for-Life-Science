@@ -2,24 +2,26 @@
 /*  GLOBAL PAGE STYLING */
 /* -------------------- */
 
+/* Remove default spacing and make width/height calculations easier */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* width = content + padding + border */
 }
 
+/* Basic styling for whole page */
 body {
-  background: #000;
-  color: #fff;
-  font-family: "Inter", sans-serif;
-  overflow-x: hidden;
+  background: #000000; /* dark background color it applies to all pages*/
+  color: #ffffffc5; /* default text color for the big home page title -> welcome to OrthologExplore */
+  font-family: "Inter", sans-serif; /* modern, clean font */
+  overflow-x: hidden; /* prevent horizontal scrolling */
 }
 
-/* Wrapper */
+/* Page wrapper — makes page fill full height */
 .page-root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;  /* at least full screen height */
+  display: flex;          /* display: flex turns a container into a smart layout box that lets you easily align its items horizontally with justify-content and vertically with align-items. */
+  flex-direction: column; /* stack content vertically */
 }
 
   /* ------------------------ */
@@ -27,48 +29,46 @@ body {
   /* ------------------------ */
 
 .nav {
-  width: 100%;
-  padding: 24px 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: transparent;
+  width: 100%; /* full width bar */
+  padding: 24px 50px;  /* space around items */
+  display: flex;  /* position items side-by-side */
+  align-items: center;  /* vertically center items */
+  justify-content: space-between; /* left side and right side pushed apart */
+  background: transparent; /* no background color */
 }
 
-/*Color of the logo*/
+/* Logo text on the top-left */
 .logo {
-  color: #317be9;
-  font-size: 1.7rem;
-  font-weight: 700;
-  text-decoration: none;
+  color: #317be9; /* blue color for logo text top left: OrthologExplore */
+  font-size: 1.7rem; /* larger font size for logo. rem is a css unit it gets translated in nr of pixels */
+  font-weight: 700; /* bold */
+  text-decoration: none; /* remove underline, remember it's a hyperlink to homepage */
 }
 
+/* Container for the right-side menu links */
 .nav-right {
-  display: flex;
-  gap: 32px;
+  display: flex; /* position menu items side-by-side */
+  gap: 32px;  /* space between menu items */
 }
 
-
-
-/* NAVIGATION MENU BAR */
-.nav-link { color: #ffffff; display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.nav-link .nav-icon { display: inline-flex; width: 20px; height: 20px; line-height: 0; }
-.nav-link .nav-icon svg {
-  width: 20px;
-  height: 20px;
-  fill: none;                 /* ensure shapes are not filled */
-  stroke: currentColor;       /* use currentColor for outline */
-  stroke-width: 1.2;          /* reduce thickness; adjust between 1 and 1.5 */
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  vector-effect: non-scaling-stroke; /* keeps stroke consistent when scaled */
-  display: block;
-  opacity: 0.9;
-  transition: opacity .18s, transform .18s;
+/* Style for individual navigation links */
+.nav-link {
+  color: #ffffff; /* white color for nav links, globally in the menu bar: example About and Visualisations */
+  display: inline-flex; /* inline-flex so we can center icon + text if needed, we use to have sgv icons */
+  align-items: center;  /* vertically align text */
+  text-decoration: none; /* remove underline from links */
+  gap: 0; /*  /* no gap because no icons, I removed them for simplicity */ 
 }
-
-/*When hovering the mouse on the menu see color highlights*/
-.nav-link:hover, .nav-link:focus { color: #2b76df; }
+  
+/* Change link color when hovering or using mouse */
+/* makes it clear it's clickable */
+/* hover = mouse pointer is over the link, focus = triggered when the element is selected */
+.nav-link:hover{
+  color: #2b76df; /* gets blue on hover/focus */
+}
+.nav-link:focus {
+  color: #2bacdf; /* gets blue on hover/focus */
+}
 
 
 /* -------------------- */
@@ -77,42 +77,44 @@ body {
 
 .hero {
   /* center hero content in the page (vertically + horizontally) */
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 100px 50px;
-  text-align: center;
-
-
-/* leaves room for header + footer; adjust 160px if needed */
-  min-height: calc(100vh - 160px); 
+  position: relative;  /* allows bubbles to be positioned inside */
+  display: flex; /* use flexbox for layout */
+  align-items: center; /* center content vertically */
+  justify-content: center; /* center content horizontally */
+  padding: 100px 50px; /* space around content (breathing room around a box inside a box) */
+  /* leaves room for header + footer; adjust 160px if needed */
+  min-height: calc(100vh - 100px); /* full vh=viewport height minus header/footer, as tall as the visible screen */
+  overflow: hidden; /* prevent animated bubbles from creating scrollbars */
 }
 
 .hero-bubbles {
-  /* cover the full hero area exactly */
+  /* Wrapper that holds all animated bubbles */
   position: absolute;
-  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  inset: 0;  /* stretch to fill hero area */ 
   width: 100%;
   height: 100%;
-  pointer-events: none;
-  overflow: visible;
+  pointer-events: none; /* bubbles can't be clicked */
+  overflow: hidden; /* clip oversized bubbles to avoid page outscroll */
+  /* overflow was previously visible which can create scrollbars */
 }
 
+/* Hero content container - make sure the text on top of bubbles stays in place */
 .hero-content {
   max-width: 760px;
-  z-index: 10;
+  z-index: 10;  /* keep text above bubbles */
   margin: 0 auto;
   text-align: center;
   position: relative;
 }
 
+/* Styling for main title, stays in place with the right size above the bubbles*/
 .hero-title {
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
+/* Styling for subtitle paragraph */
 .hero-subtitle {
   color: #e2e2e2;
   font-size: 1.2rem;
@@ -120,20 +122,18 @@ body {
   margin-bottom: 35px;
 }
 
-/*Placeholder for the explore visualisations button styling*/
+/* Style for the "Explore Visualizations" button */
 .primary-button {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px 28px;
+  gap: 10px; /* space between text and icon - the arrow  */
+  padding: 14px 28px; /* vertical and horizontal padding /centering spaces */
   background: #3a8bff;
-  color: #fff;
+  color: #ffffff; /* white text color on the big button*/
   text-decoration: none;
   border-radius: 10px;
   font-size: 1.1rem;
-  transition: 0.2s ease;
 }
-
 /*When hover change the color background of the button: explore visualisations */
 .primary-button:hover {
   background: #234fbe;
@@ -146,18 +146,18 @@ body {
 /* ------------------------------------------------------------- */
 
 /* From Uiverse.io by dexter-st */
+/* The wrapper defines the bubble size and general layout */
 .loader-wrapper {
   position: relative;
-  /* display: flex; */
   align-items: center;
   justify-content: center;
-  /* use the CSS variable when present so bubble-specific sizes take effect*/
+  /* use the CSS variable so bubble-specific sizes take effect*/
   width: var(--bubble-size, 180px);
   height: var(--bubble-size, 280px);
-  background-color: transparent;
+  background-color: transparent; /*no background color*/
 }
 
-/*Loader settings */
+/* The moving circle inside each bubble */
 .loader {
   position: absolute;
   top: 0;
@@ -167,12 +167,12 @@ body {
   border-radius: 50%; /*makes it square if you remove*/
   background-color: transparent;
   animation: loader-rotate 6s linear infinite; /*speed/duration of the bubble movement*/
-  z-index: 0;
+
 }
 
 /*Change color gradients of the moving bubbles*/
 
-@keyframes loader-rotate {
+@keyframes loader-rotate { /* keyframes define the animation steps, define the colors per rotation stages */
   5% {
     transform: rotate(90deg);
     box-shadow:
@@ -203,15 +203,14 @@ body {
 /*  BUBBLE SIZING */
 /* ===================================================== */
 
-/* Override Uiverse size so custom sizes work */
+/* Override Uiversal size so custom sizes for eacah individual bubble will work */
 .loader-wrapper.bubble {
-  width: var(--bubble-size) !important;
+  width: var(--bubble-size) !important; /* forces this size to override Ui_verse’s original sizing. */
   height: var(--bubble-size) !important;
   position: absolute;
-  opacity: 0.6;
-  filter: blur(1px);
+  opacity: 0.5; /* make bubbles semi-transparent, will dim out because of the background */
+  filter: blur(2px); /* slight blur effect for dreamy look */
   transform-origin: center;
-  z-index: 0;
 }
 
 
@@ -223,7 +222,7 @@ body {
     --bubble-size: 770px;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* moves the bubble left and up relative to its own size so that its center appears in the correct visual position */
 }
 
 .bubble-left {
@@ -243,33 +242,35 @@ body {
 /* ---------------------------- */
 /* VISUALISATION  PAGE   */
 /* ---------------------------- */
+
+/* Main content wrapper (centered column layout) */
 .content {
   max-width: 1200px;
-  margin: 26px auto;
+  margin: 26px auto; /* space above/below + center horizontally */
   padding: 0 20px;
   width: 100%;
   box-sizing: border-box;
 }
 
-/*Visualization panel*/
+/*Visualization panel - Card-like container for About / Visualization sections */
 .panel {
-  background: rgba(30, 30, 30, 0.588);
+  background: rgba(33, 36, 41, 0.411);
   border-radius: 20px;  /*rounded corners*/
   padding: 20px;
-  color: #ffffff;
+  color: #ffffff; /* TEXT color for the ABOUT page*/
 }
 
 .panel h2 {
   margin: 6px 0 14px;
   font-size: 1.4rem;
-  color: #fff;
-  font-weight: 600;
+  color: #ffffff; /* white color for the TITLE TEXT the VISUALISATION panel page */
+  font-weight: 600; /* semi-bold */
 }
 
 /* Controls above the visualization */
 .viz-controls {
   display: flex;
-  gap: 10px;
+  gap: 10px; /* space between button elements */
   align-items: center;
   margin-bottom: 16px;
   flex-wrap: wrap;
@@ -279,37 +280,29 @@ body {
   appearance: none;
   -webkit-appearance: none;
   background: transparent;
-  color: #cfcfcf;
-  border: 1px solid rgba(255,255,255,0.06);
+  color: #ffffff; /* white text color for buttons */
+  border: 1px solid rgba(111, 111, 111, 0.371); /* subtle border for buttons */
   padding: 8px 12px;
   font-size: 0.85rem;
-  border-radius: 6px;
+  border-radius: 6px; /* slightly rounded corners */
   cursor: pointer;
-  transition: all .15s ease;
-  box-shadow: none;
 }
 
 
-
+/* FOCUS effect for visualization toggle buttons when they are pressed*/
 .viz-toggle-btn--active {
   background: #1976ff;
   color: #ffffff;
 }
 
-/* Visualization container */
-/* .vis-wrapper {
-  background: rgba(0,0,0,0.35);
-  border-radius: 8px;
-  padding: 18px;
-  border: 1px solid rgba(255,255,255,0.02);
-} */
 
+/* Visualization area container */
 .vis-area {
   width: 100%;
   height: 620px; /* adjust if you want taller/shorter */
-  border-radius: 6px;
-  background: rgba(0,0,0,0.5);
-  overflow: hidden;
+  border-radius: 6px; /* slightly rounded corners */
+  background: rgba(0, 0, 0, 0.482); /* semi-transparent dark background for the visualization (graph) area */
+  overflow: hidden; /* clip overflowing content */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -317,23 +310,14 @@ body {
 }
 
 /* keep Plotly chart full height of container */
-#vis-area > .js-plotly-plot,
+/* important! to override inline styles set by Plotly */
+/*This CSS forces all Plotly charts inside #vis-area to always fill the entire container, overriding Plotly’s own sizing so the charts look consistent and responsive.*/
+#vis-area > .js-plotly-plot, 
 #vis-area > div[data-plotly],
 #vis-area .plotly {
   height: 100% !important;
   width: 100% !important;
 }
-
-/* placeholder shown while loading */
-.vis-placeholder {
-  color: rgba(255, 255, 255, 0.83);
-  font-size: 0.95rem;
-  text-align: center;
-  line-height: 1.3;
-  padding: 12px;
-  pointer-events: none;
-}
-
 
 
 /* keep the placeholder styling (already present) */
@@ -342,29 +326,41 @@ body {
   z-index: 55;
   width: 100%;
   text-align: center;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.45); /* LOADING... text inside bubble text*/
   pointer-events: none;
   top: 48%;
-  transform: translateY(-50%);
+  transform: translateY(-70%);
 }
 
-/* Ensure visualization area stacks multiple plots/containers vertically */
-#vis-area {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;            /* space between plotly-root and heatmap-top-diseases */
-  align-items: stretch;
+/* ---------------------------- */
+/* ABOUT PAGE STYLING         */
+/* ---------------------------- */
+
+/* Improve spacing for About page paragraphs to avoid clutter */
+.title-text p {
+  margin: 0 0 1rem 0;    /* space between paragraphs */
+  line-height: 1.7;      /* easier to read */
+  font-size: 1rem;
 }
 
-/* Make sure each plot container uses its own height and full width */
-#plotly-root,
-#heatmap-top-diseases {
-  width: 100%;
-  box-sizing: border-box;
-  flex: none;           /* do not stretch; height comes from explicit style or Plotly sizing */
+/* slightly separate the title block from surrounding content */
+.title-text {
+  padding: 12px 6px;
 }
 
-/* optional: make heatmap height match plot root or set explicit */
-#heatmap-top-diseases {
-  height: 560px;        /* adjust if you want larger/smaller */
+/* add spacing between title and first paragraph in About panel */
+.title-text h1 {
+  margin-bottom: 1rem; /* space after the title */
 }
+
+.title-text p:first-of-type {
+  margin-top: 0.5rem; /* small gap before the first paragraph (in addition to paragraph spacing) */
+}
+
+.close-btn {
+  position: absolute; top: 10px; right: 12px;
+  width: 34px; height: 34px; border: none; background: transparent;
+  color: #444; cursor: pointer; padding: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.close-btn svg { display: block; }

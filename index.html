@@ -1,94 +1,58 @@
-<!-- Document type declaration it a web page html -->
+<!-- DOCUMENT TYPE declaration it a html page-->
 <!DOCTYPE html> 
 <html lang="en"> <!-- the primary language is english -->
 
+<!-- HEAD SECTION - LOAD PAGE INFO-->
 <!--This head secction is not visible when you view the page in a browser, is information important to load the page and other functionalities-->
 <head>
   <!-- the character encoding is UTF-8, posibility to use other characters that are not ASCII -->
   <meta charset="UTF-8" /> 
-  <title>OrthologMatch</title> <!-- Set the title of the web page when you search it, is visible in the page tab-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--treat the screen width as the device width scale the page normally-->
-
-  <!-- Plotly.js (for the bar plots) and D3.js (for the graph) libraries for data visualizations -->
-   <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
-   <script src ="https://d3js.org/d3.v7.min.js"></script> <!--Import d3.js -->
-
- 
+  <title>OrthologExplore</title> <!-- Set the title of the web page when you search it, is visible in the page tab-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--treat the screen width as the device width scale the page normally, start with 100% zoom--> 
 
   <!-- Call the style.css file to make the page look good (colors and layout), reuse the css across multiple pages/files -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
 
-<body>
-  <!-- PAGE WRAPPER -->
+<!-- BODY SECTION - VISIBLE CONTENT OF THE PAGE -->
+<body> 
+  <!-- PAGE WRAPPER - THIS IS THE MAIN CONTAINER FOR THE PAGE CONTENT -->
   <div class="page-root">
-
     <!-- MENU BAR AT THE TOP  -->
     <header class="nav">
-
-<!--Placeholder for the Logo/Title of page -->
-      <div class="nav-left">
-        <a href="#" class="logo">OrthologExplore</a>
+      <!-- Placeholder for the Logo/Title of page -->
+      <div class="nav-left"> <!-- Container for the logo/title (left of the sidebar) -->
+        <a href="#" class="logo" aria-label="OrthologExplore home">OrthologExplore</a> <!-- Anchor link to the homepage -->
       </div>
 
-<!--Placeholder for the other buttons -->
+      <!-- Placeholder for the other buttons -->
       <nav class="nav-right">
-        <!--Call the visualisation html file, open another page in the web ,<a/> is just anchor , creates a link -->
+        <!-- Link to the visualization page (anchor `<a>` element) -->
         <a href="visualizations.html" class="nav-link">
-          <!--Add the icon next to the Visualizations button -->
-          <span class="nav-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
-              <path d="M18 17V9"></path>
-              <path d="M13 17V5"></path>
-              <path d="M8 17v-3"></path>
-            </svg>
-          </span>
           <span class="nav-label">Visualizations</span>
         </a>
-
-    
-<!-- Placeholder for the Guide menu link to a new page-->
-        <!-- <a href="guide.html" class="nav-link">
-          <span class="nav-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 7v14"></path>
-              <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path>
-            </svg>
-          </span>
-          <span class="nav-label">Guide</span>
-        </a> -->
-
-<!-- Placeholder for About menu link to a new page-->
-        <a href="about.html" class="nav-link">
-          <span class="nav-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M12 16v-4"></path>
-              <path d="M12 8h.01"></path>
-            </svg>
-          </span>
+        <a href="about.html" class="nav-link"> <!-- Link to the about page -->
           <span class="nav-label">About</span>
         </a>
       </nav>
     </header>
+    <!-- End of navigation bar -->
 
-    <!-- HERO SECTION - Refers to the main page background bubbles -->
-    <main class="hero">
-      <!-- Background bubbles (using Uiverse loader classes) -->
+
+    <!--MAIN SECTION OF THE PAGE -->
+    <!-- HERO SECTION - background bubbles -->
+    <main id="main-content" class="hero">
+      <!-- Background bubbles (decorative loaders) -->
       <div class="hero-bubbles">
         <!-- Left bubble -->
         <div class="loader-wrapper bubble bubble-left">
           <div class="loader"></div>
-          <!-- optional extra layer -->
-         
         </div>
 
         <!-- Center large bubble -->
         <div class="loader-wrapper bubble bubble-center">
           <div class="loader"></div>
-      
         </div>
 
         <!-- Right bubble -->
@@ -97,25 +61,21 @@
         </div>
       </div>
 
-      <!-- THE TEXT BELOW THE TITLE -->
+      <!-- Text below the title -->
       <section class="hero-content">
         <h1 class="hero-title">Welcome to OrthologExplore</h1>
-        <p class="hero-subtitle">
-          The platform for visualizing human-animal orthologous data trends. 
+        <p class="hero-subtitle"> <!--Subtitle text/Paragraph-->
+          The platform for visualizing human-animal orthologous data trends.
           Get insights into what species and disease are most explored according to Wikidata orthologous gene data and GO annotations.
         </p>
 
-        <!-- PLACEHOLDER FOR THE EXPLORE VISUALIZATIONS BLUE BUTTON -->
+        <!-- Explore visualizations button -->
         <a href="visualizations.html#bar" class="primary-button">
           Explore Visualizations <span class="button-arrow">→</span>
         </a>
       </section>
+      <!-- End of main content -->
     </main>
-
-  
-
-  <script>
-    // nothing required here for the vis page; visualizations.html loads the VisData script
-  </script>
+  </div>
 </body>
 </html>

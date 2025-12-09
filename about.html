@@ -1,26 +1,70 @@
+<!-- Tell the browser this is an HTML5 document -->
 <!doctype html>
+<!-- Set the main language of the page to English -->
 <html lang="en">
+
+<!-- HEAD SECTION - NOT VISIBLE CONTENT IN THE WEB PAGE -->
 <head>
-  <meta charset="utf-8" />
-  <title>Visualizations — OrthologExplore</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link href="styles.css" rel="stylesheet">
+  <meta charset="utf-8" />  <!-- Use UTF-8 so all characters (letters, symbols) display correctly -->
+  <title>Visualizations — OrthologExplore</title> <!-- Title shown on the browser tab -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" /> <!-- Make the page scale correctly -->
+  <link href="styles.css" rel="stylesheet">  <!-- Load the external CSS file that controls all colors, layout, spacing -->
 </head>
+
+<!-- Everything inside <body> is visible to the user -->
+<!-- NAVIGATION SECTION - LINKS TO OTHER PAGES -->
 <body class="page-root">
-  <header class="nav">
+  <!-- Top navigation bar -->
+  <header class="nav">  
     <div class="nav-left">
+    <!-- Clicking the logo sends the user back to the homepage -->
       <a href="index.html" class="logo">OrthologExplore</a>
     </div>
+
+ <!-- Right side of the nav bar: navigation links -->
     <nav class="nav-right">
-      <a href="index.html" class="nav-link"><span class="nav-icon">…</span><span class="nav-label">Home</span></a>
-      <a href="about.html" class="nav-link"><span class="nav-icon">…</span><span class="nav-label">About</span></a>
-      <a href="visualizations.html" class="nav-link"><span class="nav-icon">…</span><span class="nav-label">Visualizations</span></a>
+         <!-- Link to the homepage -->
+      <a href="index.html" class="nav-link"><span class="nav-label">Home</span></a>
+      <!-- Link to the visualizations page -->
+      <a href="visualizations.html" class="nav-link"><span class="nav-label">Visualizations</span></a>
     </nav>
   </header>
 
+   <!-- Main content area of the page -->
   <main class="content">
+    <!-- A container (panel) for the About text section -->
     <section class="panel">
-        <div class="title-text">
-            <h1>About OrthologExplore</h1>
-            <text>OrthologExplore is a web-based tool designed to facilitate the exploration and visualization of orthologous information across multiple species.</text>
+      <div class="title-text">
+          <!-- Main heading of the page -->
+        <h1>About OrthologExplore</h1>
+        <p>  <!-- Paragraph explaining what orthologs are -->
+          This website is dedicated to exploring orthologs — genes in different species that derive from the same ancestral gene.
+          Although species diverge, orthologous genes frequently retain similar functions. Orthologs are essential for understanding
+          evolutionary relationships, how genes change over time, and which biological functions are conserved across life.
+        </p>
+        <p>
+          Our goal is to provide an accessible and organized resource for anyone interested in comparative genomics, evolutionary
+          biology, or gene function analysis. To maintain high quality and reliable results, we include only ortholog datasets that
+          contain more than 1,000 genes. Focusing on larger gene sets strengthens evolutionary signals, produces more meaningful
+          comparisons, and reduces noise from small or incomplete datasets.
+        </p>
+        <p>
+          By using substantial gene collections, we aim to deliver clearer insights into gene relationships across species, support
+          research efforts, and offer a helpful starting point for students, scientists, and curious users. The site is designed for
+          simplicity and ease of use, even for those new to the topic.
+        </p>
+        <p>Thank you for visiting — we hope this resource helps you explore the fascinating world of orthologs and genomics.</p>
+
+        <!-- Explanation of visualization methods, we get a list of items ul , and then the list individual items li, strong means bold format-->
+        <h2 style="margin-top:1rem;">How the visualizations are made</h2> <!--1rem = 16px is CSS unit for spacing, this is a special spacing between the title and the rest of the paragraphs-->
+        <ul>
+          <li><strong>Graph</strong>: only the top, most ortholog‑dense diseases are taken into account; nodes are diseases, radius shows number of GO terms, and edges are Jaccard similarities between disease GO sets.</li>
+          <li><strong>Bar plot</strong>: species with fewer than 1,000 ortholog genes are filtered out via the SPARQL query.</li>
+          <li><strong>GO annotations</strong>: only GO biological process annotations are used — these are the annotations most relevant for the project purpose.</li>
+          <li><strong>Data source</strong>: all data is fetched from Wikidata via its public SPARQL endpoint.</li>
+        </ul>
+      </div>
     </section>
+  </main>
+</body>
+</html>
